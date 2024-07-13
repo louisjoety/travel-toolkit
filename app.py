@@ -19,3 +19,4 @@ if __name__ == "__main__":
     text = convert_image_to_text(image_path)
     print("Extracted Text:")
     print(text)
+    
