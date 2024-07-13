@@ -1,1 +1,3 @@
-print('Hello World')
+import cv2
+import pytesseract
+from PIL import Image
