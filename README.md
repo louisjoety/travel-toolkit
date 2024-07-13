@@ -1,4 +1,4 @@
-# Image to Text Converter
+# Pocket Translation
 
 This project is a simple image-to-text converter using Python. It utilizes the Tesseract OCR engine to extract text from images.
 
