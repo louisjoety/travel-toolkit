@@ -1,6 +1,6 @@
 # Pocket Translation
 
-This project is a simple image-to-text converter using Python. It utilizes the Tesseract OCR engine to extract text from images.
+This project is a simple image-to-text converter using Python and a Next.js frontend. It utilizes the Tesseract OCR engine to extract text from images.
 
 ## Table of Contents
 
@@ -15,6 +15,7 @@ This project is a simple image-to-text converter using Python. It utilizes the T
 
 - Python 3.x
 - Tesseract OCR
+- Node.js
 
 ### Steps
 
@@ -39,7 +40,7 @@ This project is a simple image-to-text converter using Python. It utilizes the T
       source venv/bin/activate
       ```
 
-4. **Install the required libraries:**
+4. **Install the required Python libraries:**
     ```bash
     pip install -r requirements.txt
     ```
@@ -55,7 +56,44 @@ This project is a simple image-to-text converter using Python. It utilizes the T
       sudo apt-get install tesseract-ocr
       ```
 
+6. **Set up the Next.js app:**
+    ```bash
+    cd frontend
+    npx create-next-app@latest .
+    ```
+
+7. **Install Tailwind CSS (optional):**
+    ```bash
+    npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+    npx tailwindcss init -p
+    ```
+
+8. **Configure `tailwind.config.js`:**
+    ```javascript
+    /** @type {import('tailwindcss').Config} */
+    module.exports = {
+      content: [
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}",
+      ],
+      theme: {
+        extend: {},
+      },
+      plugins: [],
+    }
+    ```
+
+9. **Add Tailwind CSS to your CSS file:**
+    ```css
+    /* In styles/globals.css */
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    ```
+
 ## Usage
+
+### Python Script
 
 1. **Place your image file in the project directory.**
 
@@ -74,6 +112,20 @@ This project is a simple image-to-text converter using Python. It utilizes the T
     ```
 
 4. **The extracted text will be printed to the console.**
+
+### Next.js App
+
+1. **Navigate to the Next.js app directory:**
+    ```bash
+    cd next-app
+    ```
+
+2. **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+3. **Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.**
 
 ## Contributing
 
