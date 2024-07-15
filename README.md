@@ -1,6 +1,6 @@
 # Pocket Translation
 
-This project is a web application that translates text on images to English using Python and Next.js (TypeScript). In this project I experiment on three different web frameworks: Flask, Django, and FastAPI.
+This project is a web application that translates text on images to English using Python and Next.js (TypeScript). In this project, I experiment on three different web frameworks: Flask, Django, and FastAPI.
 
 ## Table of Contents
 
