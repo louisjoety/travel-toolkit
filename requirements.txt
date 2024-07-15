@@ -1,3 +1,7 @@
 pytesseract
 opencv-python
 Pillow
+flask
+django
+fastapi
+uvicorn

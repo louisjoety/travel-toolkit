@@ -1,6 +1,6 @@
 # Pocket Translation
 
-This project is a simple image-to-text converter using Python and a Next.js frontend. It utilizes the Tesseract OCR engine to extract text from images.
+This project is a web application that translates text on images to English using Python and Next.js (TypeScript). In this project I experiment on three different web frameworks: Flask, Django, and FastAPI.
 
 ## Table of Contents
 
@@ -13,15 +13,15 @@ This project is a simple image-to-text converter using Python and a Next.js fron
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.8+
 - Tesseract OCR
-- Node.js
+- Node.js (for Next.js)
 
 ### Steps
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/image_to_text.git
+    git clone https://github.com/louisjoety/image_to_text.git
     cd image_to_text
     ```
 
