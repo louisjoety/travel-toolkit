@@ -5,3 +5,4 @@ flask
 django
 fastapi
 uvicorn
+flask-cors
