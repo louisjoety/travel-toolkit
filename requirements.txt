@@ -1,6 +1,8 @@
 pytesseract
 opencv-python
 Pillow
+google-cloud-translate
+python-dotenv
 flask
 django
 fastapi
