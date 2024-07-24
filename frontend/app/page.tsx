@@ -8,7 +8,7 @@ export default function Home() {
 
   const handleClick = async () => {
     try {
-      const response = await fetch("http://localhost:5000/get-quote", {
+      const response = await fetch("http://localhost:8000/get-quote", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
