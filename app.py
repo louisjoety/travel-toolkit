@@ -9,6 +9,6 @@ client = freecurrencyapi.Client('API_KEY')
 # Load environment variables from .env file
 load_dotenv()
 
-result = client.latest()
-print(result)
+print(client.status())
+
 
