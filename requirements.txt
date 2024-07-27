@@ -8,3 +8,4 @@ flask
 django
 fastapi
 uvicorn
+freecurrencyapi
