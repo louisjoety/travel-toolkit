@@ -9,5 +9,6 @@ client = freecurrencyapi.Client('API_KEY')
 # Load environment variables from .env file
 load_dotenv()
 
-result = client.currencies(currencies=['EUR', 'CAD'])
+result = client.historical('2022-02-02')
 print(result)
+
