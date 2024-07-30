@@ -8,6 +8,11 @@ from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
 from heapq import nlargest
 
+# Download NLTK data files
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
 def setup_tesseract(tesseract_cmd_path):
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd_path
 
