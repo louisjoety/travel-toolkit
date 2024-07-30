@@ -61,6 +61,10 @@ def main(image_path, tesseract_cmd_path):
     if text:
         print("Extracted Text:")
         print(text)
+        
+        summary = summarize_text(text)
+        print("\nSummary:")
+        print(summary)
     else:
         print("No text extracted.")
 
