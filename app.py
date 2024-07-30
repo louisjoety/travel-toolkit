@@ -80,6 +80,6 @@ def main(image_path, tesseract_cmd_path):
         print("No text extracted.")
 
 if __name__ == "__main__":
-    image_path = 'image.png' # TODO: Add file path to image
+    image_path = '' # TODO: Add file path to image
     tesseract_cmd_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe' 
     main(image_path, tesseract_cmd_path)
