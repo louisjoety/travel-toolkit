@@ -30,6 +30,30 @@ def convert_image_to_text(image_path):
     except Exception as e:
         print(f"Error: {e}")
         return ""
+    
+def summarize_text(text, n_sentences=3):
+    stop_words = set(stopwords.words('english'))
+    words = word_tokenize(text.lower())
+    filtered_words = [word for word in words if word.isalnum() and word not in stop_words]
+    
+    word_frequencies = FreqDist(filtered_words)
+    max_frequency = max(word_frequencies.values())
+    for word in word_frequencies.keys():
+        word_frequencies[word] = (word_frequencies[word] / max_frequency)
+    
+    sentence_scores = {}
+    sentences = sent_tokenize(text)
+    for sentence in sentences:
+        for word in word_tokenize(sentence.lower()):
+            if word in word_frequencies.keys():
+                if sentence not in sentence_scores.keys():
+                    sentence_scores[sentence] = word_frequencies[word]
+                else:
+                    sentence_scores[sentence] += word_frequencies[word]
+    
+    summary_sentences = nlargest(n_sentences, sentence_scores, key=sentence_scores.get)
+    summary = ' '.join(summary_sentences)
+    return summary
 
 def main(image_path, tesseract_cmd_path):
     setup_tesseract(tesseract_cmd_path)
