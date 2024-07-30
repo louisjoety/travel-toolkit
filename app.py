@@ -2,16 +2,27 @@ import cv2
 import pytesseract
 from PIL import Image
 import nltk
+from nltk.data import find
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 from nltk.probability import FreqDist
 from nltk.tokenize import word_tokenize
 from heapq import nlargest
 
-# Download NLTK data files
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+def ensure_nltk_data():
+    resources = [
+        ('tokenizers/punkt', 'punkt'),
+        ('corpora/stopwords', 'stopwords'),
+        ('corpora/wordnet', 'wordnet')
+    ]
+    
+    for resource_path, resource_name in resources:
+        try:
+            find(resource_path)
+        except LookupError:
+            nltk.download(resource_name)
+
+ensure_nltk_data()
 
 def setup_tesseract(tesseract_cmd_path):
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd_path
@@ -69,6 +80,6 @@ def main(image_path, tesseract_cmd_path):
         print("No text extracted.")
 
 if __name__ == "__main__":
-    image_path = '' # TODO: Add file path to image
+    image_path = 'image.png' # TODO: Add file path to image
     tesseract_cmd_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe' 
     main(image_path, tesseract_cmd_path)
