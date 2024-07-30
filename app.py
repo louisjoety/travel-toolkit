@@ -1,6 +1,12 @@
 import cv2
 import pytesseract
 from PIL import Image
+import nltk
+from nltk.tokenize import sent_tokenize
+from nltk.corpus import stopwords
+from nltk.probability import FreqDist
+from nltk.tokenize import word_tokenize
+from heapq import nlargest
 
 def setup_tesseract(tesseract_cmd_path):
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd_path
