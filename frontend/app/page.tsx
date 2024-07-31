@@ -2,10 +2,13 @@
 
 import { useRouter } from 'next/navigation';
 import "./globals.css";
+import Header from './components/Header';
 
 export default function Home() {
   const router = useRouter()
   return (
+    <>
+    <Header />
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="text-center">
         <h1 className="text-4xl font-bold mb-8">Welcome to Pocket Translate</h1>
@@ -34,5 +37,6 @@ export default function Home() {
         </div>
       </div>
     </main>
+    </>
   );
 }
