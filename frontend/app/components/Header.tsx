@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Lato } from "@next/font/google";
 import Logo from "./Logo.png";
-import {AiOutlineMenu} from 'react-icons/ai'
+import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { useState } from "react";
 
 // Load the Lato font
@@ -59,6 +59,47 @@ const Header = () => {
         ? "fixed left-0 top-0 w-[65%] sm:hidden h-screen bg-[#ecf0f3] p-10 ease-in duration-500"
         : "fixed left-[100%] top-0 p-10 ease-in duration-500"
       }>
+      <div className="flex w-full items-center justify-end">
+        <div onClick={handleNav} className="cursor-pointer">
+          <AiOutlineClose size={10} />
+        </div>
+      </div>
+      <div className="flex-col py-4">
+        <ul>
+          <Link href="/translator">
+            <li
+            onClick={() => setMenuOpen(false)}
+            className="py-4 cursor-pointer"
+            >
+              Image-to-Text
+            </li>
+          </Link>
+          <Link href="/translator">
+            <li
+            onClick={() => setMenuOpen(false)}
+            className="py-4 cursor-pointer"
+            >
+              Translate
+            </li>
+          </Link>
+          <Link href="/summarize">
+            <li
+            onClick={() => setMenuOpen(false)}
+            className="py-4 cursor-pointer"
+            >
+              Summarise
+            </li>
+          </Link>
+          <Link href="/converter">
+            <li
+            onClick={() => setMenuOpen(false)}
+            className="py-4 cursor-pointer"
+            >
+              Convert Currency
+            </li>
+          </Link>
+        </ul>
+      </div>
       </div>
     </nav>
   )
