@@ -100,6 +100,18 @@ const Header = () => {
           </Link>
         </ul>
       </div>
+      <div className="flex flex-row items-center">
+        <Link href="/">
+        <Image 
+            src={Logo}
+            alt="Logo"
+            width={50}
+            height={50}
+            className="cursor-pointer"
+            priority
+          />
+        </Link>
+      </div>
       </div>
     </nav>
   )
