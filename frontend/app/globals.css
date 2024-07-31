@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.card {
+  @apply rounded-lg border border-gray-300 p-6 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-neutral-700 dark:bg-neutral-800/30 dark:hover:border-neutral-600 dark:hover:bg-neutral-700;
+}
+
+.btn {
+  @apply bg-blue-500 text-white py-2 px-4 rounded transition-colors hover:bg-blue-600;
+}
