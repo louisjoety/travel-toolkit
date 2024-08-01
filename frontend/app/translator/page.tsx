@@ -1,5 +1,6 @@
 import "../globals.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Translator() {
   return (
@@ -9,6 +10,7 @@ export default function Translator() {
       <h1 className="text-4xl font-bold mb-8">Translator</h1>
       <p className="text-lg">Translate texts to english.</p>
     </main>
+    <Footer />
     </>
   );
 }
