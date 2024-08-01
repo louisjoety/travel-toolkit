@@ -8,10 +8,9 @@ import Logo from "./Logo.png";
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { useState } from "react";
 
-// Load the Lato font
 const lato = Lato({
   subsets: ['latin'],
-  weight: ['400', '700'], // specify the weights you want to use
+  weight: ['400', '700'], 
 });
 
 const Header = () => {

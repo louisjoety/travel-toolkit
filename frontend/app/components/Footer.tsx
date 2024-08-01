@@ -3,11 +3,15 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Lato } from "@next/font/google";
 import Logo from "./Logo.png";
+
+const lato = Lato({
+    subsets: ['latin'],
+    weight: ['400', '700'], 
+  });
 
 function Footer() {
   return (
