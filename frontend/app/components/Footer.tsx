@@ -1,4 +1,8 @@
 import React from 'react'
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -9,7 +13,12 @@ function Footer() {
 						<p className="text-gray-800 font-bold text-3xl pb-6">
 							Stream<span className="text-blue-600">line</span>
 						</p>
-						
+						<div className="flex gap-6 pb-5">
+							<FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
+							<FaTwitter className="text-2xl cursor-pointer hover:text-blue-600" />
+							<FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
+							<FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
+						</div>
 					</ul>
 				</div>
 				<div className="p-5">
@@ -72,10 +81,7 @@ function Footer() {
 			</div>
 			<div className="flex flex-col justify-center items-center text-center  p-5 bg-gray-50">
 				<h1 className=" text-gray-800 font-semibold">
-					© 2021-2022 All rights reserved | Build with ❤ by{" "}
-					<span className="hover:text-blue-600 font-semibold cursor-pointer">
-						streamline{" "}
-					</span>
+					© 2024 All rights reserved | For Travelling and Leisure Purposes
 				</h1>
 			</div>
 		</>
