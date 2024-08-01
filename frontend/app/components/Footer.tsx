@@ -28,11 +28,19 @@ function Footer() {
                             </Link> 
 						</p>
 						<div className="flex gap-6 pb-5">
-							<FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
-							<FaTwitter className="text-2xl cursor-pointer hover:text-blue-600" />
-							<FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
-							<FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
-						</div>
+                            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                                <FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
+                            </a>
+                            <a href="https://x.com/?lang=en" target="_blank" rel="noopener noreferrer">
+                                <FaTwitter className="text-2xl cursor-pointer hover:text-blue-600" />
+                            </a>
+                            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                                <FaLinkedin className="text-2xl cursor-pointer hover:text-blue-600" />
+                            </a>
+                            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                                <FaYoutube className="text-2xl cursor-pointer hover:text-red-600" />
+                            </a>
+                        </div>
 					</ul>
 				</div>
 				<div className="p-5">
