@@ -59,7 +59,7 @@ function Footer() {
             </Link>
             <Link href="/summarize">
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-                Summarize
+                Summarise
               </li>
             </Link>
             <Link href="/converter">
