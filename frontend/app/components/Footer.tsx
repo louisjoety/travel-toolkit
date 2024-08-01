@@ -45,19 +45,27 @@ function Footer() {
 				</div>
 				<div className="p-5">
 					<ul>
-						<p className="text-gray-800 font-bold text-2xl pb-4">Product</p>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Stocks
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Futures & Options
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Mutual Funds
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Fixed deposits
-						</li>
+						<p className="text-gray-800 font-bold text-2xl pb-4">Services</p>
+                            <Link href="/translator">
+                                <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                                    Image-to-Text
+                                </li>
+                            </Link>
+                            <Link href="/translator">
+                                <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                                    Translate
+                                </li>
+                            </Link>
+                            <Link href="/summarize">
+                                <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                                    Summarise
+                                </li>
+                            </Link>
+                            <Link href="/converter">
+                                <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                                    Convert Currency
+                                </li>
+                            </Link>
 					</ul>
 				</div>
 				<div className="p-5">
@@ -84,19 +92,19 @@ function Footer() {
 					<ul>
 						<p className="text-gray-800 font-bold text-2xl pb-4">Support</p>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Contact
+							Tesseract OCR
 						</li>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Support Portals
+							NLTK
 						</li>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							List Of Charges
+							Next.js
 						</li>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Downloads & Resources
+							Google Translate
 						</li>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Videos
+							FreeCurrencyAPI
 						</li>
 					</ul>
 				</div>
