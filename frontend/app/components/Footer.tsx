@@ -3,6 +3,11 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Lato } from "@next/font/google";
+import Logo from "./Logo.png";
 
 function Footer() {
   return (
@@ -11,7 +16,16 @@ function Footer() {
 				<div className="p-5 ">
 					<ul>
 						<p className="text-gray-800 font-bold text-3xl pb-6">
-							Stream<span className="text-blue-600">line</span>
+                            <Link href="/">
+                                <Image 
+                                    src={Logo}
+                                    alt="Logo"
+                                    width={50}
+                                    height={50}
+                                    className="cursor-pointer"
+                                    priority
+                                />
+                            </Link> 
 						</p>
 						<div className="flex gap-6 pb-5">
 							<FaInstagram className="text-2xl cursor-pointer hover:text-yellow-600" />
