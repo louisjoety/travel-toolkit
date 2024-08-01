@@ -72,40 +72,43 @@ function Footer() {
 					<ul>
 						<p className="text-gray-800 font-bold text-2xl pb-4">Company</p>
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							About
+							About us
 						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Products
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Pricing
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Careers
-						</li>
-						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
-							Press & Media
-						</li>
+						<a href="mailto:travelspace@gmail.com">
+                            <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
+                            Contact us
+                            </li>
+                        </a>
 					</ul>
 				</div>
 				<div className="p-5">
 					<ul>
-						<p className="text-gray-800 font-bold text-2xl pb-4">Support</p>
+						<p className="text-gray-800 font-bold text-2xl pb-4">Resources</p>
+                        <Link href="https://tesseract-ocr.github.io/">   
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
 							Tesseract OCR
 						</li>
+                        </Link>
+                        <Link href="https://www.nltk.org/">  
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
 							NLTK
 						</li>
+                        </Link>
+                        <Link href="https://nextjs.org/">  
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
 							Next.js
 						</li>
+                        </Link>
+                        <Link href="https://translate.google.com/">  
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
 							Google Translate
 						</li>
+                        </Link>
+                        <Link href="https://freecurrencyapi.com/">  
 						<li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
 							FreeCurrencyAPI
 						</li>
+                        </Link>
 					</ul>
 				</div>
 			</div>
