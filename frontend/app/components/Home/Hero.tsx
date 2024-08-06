@@ -13,11 +13,11 @@ function Hero() {
     <div className="container mx-auto px-6 flex relative py-32 pl-16"> 
       <div className="sm:w-2/3 lg:w-2/3 flex flex-col relative z-20">
         <span className="w-20 h-2 bg-gray-800 dark:bg-white mb-12"></span>
-        <h1 className={`${lato.className} uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800`}>
+        <h1 className={`${lato.className} uppercase text-4xl sm:text-6xl font-black flex flex-col leading-none dark:text-white text-gray-800`}>
           Explore Beyond
-          <span className="text-5xl sm:text-7xl">Limits</span>
+          <span className="text-xl sm:text-3xl">Limits</span>
         </h1>
-        <p className={`${lato.className} text-sm sm:text-base text-gray-700 dark:text-white`}>
+        <p className={`${lato.className} pt-8 text-sm sm:text-base text-gray-700 dark:text-white`}>
             Unlock endless adventures with our travel app. Find hidden gems, plan effortlessly, and start your next journey with ease. Explore beyond limits and make every trip unforgettable.
         </p>
         <div className="flex mt-8">
