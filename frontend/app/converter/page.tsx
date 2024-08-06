@@ -1,5 +1,6 @@
 import "../globals.css";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function Converter() {
   return (
@@ -9,6 +10,7 @@ export default function Converter() {
       <h1 className="text-4xl font-bold mb-8">Converter</h1>
       <p className="text-lg">Convert images to text.</p>
     </main>
+    <Footer />
     </>
   );
 }
