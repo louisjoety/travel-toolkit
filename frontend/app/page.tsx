@@ -1,16 +1,23 @@
 'use client';
 
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import "./globals.css";
+import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Home/Hero';
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <>
-      <Header />
+      <Header menuOpen={menuOpen} handleNav={handleNav} />
       <Hero />
       <Footer />
     </>
