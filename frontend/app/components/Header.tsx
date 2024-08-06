@@ -21,7 +21,7 @@ const Header = () => {
   }
 
   return (
-    <nav className={`fixed w-full h-24 shadow-xl bg-white ${lato.className}`}>
+    <nav className={`z-10 fixed w-full h-24 shadow-xl bg-white ${lato.className}`}>
       <div className='flex justify-between items-center h-full w-full px-4 2xl:px-16'>
         <Link href="/">
           <Image
