@@ -8,7 +8,7 @@ const lato = Lato({
 
 function Uses() {
   return (
-    <div className={`container relative z-10 mx-auto mt-12 ${lato.className}`}>
+    <div className={`container relative z-10 mx-auto mt-12 ${lato.className}`} style={{ margin: '2/3' }}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Our Trusted Softwares</h2>
       </div>
@@ -24,11 +24,11 @@ function Uses() {
           { src: "https://media.geeksforgeeks.org/wp-content/uploads/20200210175202/django-basics.png", alt: "Django", text: "Django" },
           { src: "https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png", alt: "Next.js", text: "Next.js" }
         ].map((item, index) => (
-          <div className="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div key={index} className="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
               <img
                 src={item.src}
-                className="block mx-auto"
+                className="block mx-auto w-32 h-32 object-contain" 
                 alt={item.alt}
               />
             </div>
