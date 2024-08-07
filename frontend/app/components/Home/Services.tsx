@@ -21,13 +21,13 @@ type Props = {
 const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
   return (
     <div className={`font-lato`}>
-      <div className="relative bg-[#e7dfd9] md:rounded-tr-3xl md:rounded-br-3xl">
+      <div className="grid place-items-start w-full bg-[#e7dfd9] relative md:rounded-tr-3xl md:rounded-br-3xl">
         {images.map((elem, idx) => (
           <div
             key={idx}
             className={`${
               idx === activeImage
-                ? "block w-full h-full md:h-[80vh] py-20 md:px-20 px-10 text-center"
+                ? "block w-full h-full md:h-[80vh] py-20 md:px-20 px-10 text-left"
                 : "hidden"
             }`}
           >
@@ -45,32 +45,30 @@ const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
                 duration: 1,
                 x: { duration: 0.5 },
               }}
-              className="w-full text-center"
+              className="w-full"
             >
               <div className="py-16 text-5xl font-extrabold">{elem.title}</div>
-              <div className="leading-relaxed font-medium text-base tracking-wide italic text-gray-600">
+              <div className="leading-relaxed font-medium text-base tracking-wide h-60 md:h-40 italic text-gray-600">
                 {elem.desc}
               </div>
             </motion.div>
 
-            <div className="mt-4 text-center">
-              <Link href={elem.link}>
-                <button className="bg-[#ecae7e] text-white uppercase px-4 py-2 rounded-md">
-                  Order Now
-                </button>
-              </Link>
-            </div>
+            <Link href={elem.link}>
+              <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md mt-4">
+                Order Now
+              </button>
+            </Link>
 
-            <div className="absolute bottom-0 w-full flex justify-between items-center px-4">
+            <div className="absolute md:bottom-1 bottom-10 right-10 md:right-0 w-full flex justify-center items-center">
               <div
-                className="cursor-pointer"
+                className="absolute bottom-2 right-10 cursor-pointer"
                 onClick={clickPrev}
               >
                 <Image src={left} alt="Previous" />
               </div>
 
               <div
-                className="cursor-pointer"
+                className="absolute bottom-2 right-2 cursor-pointer"
                 onClick={clickNext}
               >
                 <Image src={right} alt="Next" />
