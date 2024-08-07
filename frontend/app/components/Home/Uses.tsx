@@ -16,13 +16,13 @@ function Uses() {
       <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
         {[
           { src: "https://upload.wikimedia.org/wikipedia/commons/1/11/Toolbaricon_TesseractOCR.png", alt: "Tesseract OCR", text: "Tesseract OCR" },
-          { src: "https://redpixelthemes.com/assets/images/icon-blog-green.svg", alt: "GoogleTrans", text: "GoogleTrans" },
-          { src: "https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg", alt: "FreecurrencyAPI", text: "FreecurrencyAPI" },
-          { src: "https://redpixelthemes.com/assets/images/icon-landing-page-green.svg", alt: "NLTK", text: "NLTK" },
-          { src: "https://redpixelthemes.com/assets/images/icon-startup-green.svg", alt: "Flask", text: "Flask" },
-          { src: "https://redpixelthemes.com/assets/images/icon-business-green.svg", alt: "FastAPI", text: "FastAPI" },
-          { src: "https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg", alt: "Django", text: "Django" },
-          { src: "https://redpixelthemes.com/assets/images/icon-health-green.svg", alt: "Next.js", text: "Next.js" }
+          { src: "https://upload.wikimedia.org/wikipedia/commons/d/db/Google_Translate_Icon.png", alt: "GoogleTrans", text: "GoogleTrans" },
+          { src: "https://freecurrencyapi.com/img/favicon/android-icon-192x192.png", alt: "FreecurrencyAPI", text: "FreecurrencyAPI" },
+          { src: "https://miro.medium.com/v2/resize:fit:592/1*YM2HXc7f4v02pZBEO8h-qw.png", alt: "NLTK", text: "NLTK" },
+          { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png", alt: "Flask", text: "Flask" },
+          { src: "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png", alt: "FastAPI", text: "FastAPI" },
+          { src: "https://media.geeksforgeeks.org/wp-content/uploads/20200210175202/django-basics.png", alt: "Django", text: "Django" },
+          { src: "https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png", alt: "Next.js", text: "Next.js" }
         ].map((item, index) => (
           <div className="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
@@ -31,9 +31,6 @@ function Uses() {
                 className="block mx-auto"
                 alt={item.alt}
               />
-              <p className={`pt-4 text-sm font-medium capitalize text-green-900 lg:text-lg md:text-base md:pt-6 ${lato.className}`}>
-                {item.text}
-              </p>
             </div>
           </div>
         ))}
