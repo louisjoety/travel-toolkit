@@ -4,6 +4,7 @@ import left from "./left.svg";
 import right from "./right.svg";
 import { motion } from 'framer-motion';
 import Image from "next/image";
+import Link from "next/link"; 
 
 type Props = {
   activeImage: any;
@@ -44,14 +45,16 @@ const Description = ({ activeImage, clickNext, clickPrev }: Props) => {
           >
             <div className="py-16 text-5xl font-extrabold">{elem.title}</div>
             <div className="leading-relaxed font-medium text-base tracking-wide h-60 md:h-40 italic text-gray-600">
-              {" "}
               {elem.desc}
             </div>
           </motion.div>
 
-          <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md">
-            order now
-          </button>
+          <Link href={elem.link}>
+            <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md">
+              Order Now
+            </button>
+          </Link>
+
           <div className="absolute md:bottom-1 bottom-10 right-10 md:right-0 w-full flex justify-center items-center">
             <div
               className="absolute bottom-2 right-10 cursor-pointer"
