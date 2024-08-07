@@ -36,6 +36,7 @@ const Hero = () => {
           alt="Visual representation"
           width={1200}
           height={1200}
+          loading="lazy"
         />
       </div>
     </div>

@@ -6,9 +6,9 @@ const lato = Lato({
   weight: ['400', '700'],
 });
 
-function Uses() {
+function Partners() {
   return (
-    <div className={`container relative z-10 mx-auto mt-12 ${lato.className}`} style={{ margin: '2/3' }}>
+    <div className={`bg-gray-50 container relative z-10 mx-auto ${lato.className}`} style={{ margin: '2/3' }}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Our Trusted Softwares</h2>
       </div>
@@ -40,4 +40,4 @@ function Uses() {
   );
 }
 
-export default Uses;
+export default Partners;
