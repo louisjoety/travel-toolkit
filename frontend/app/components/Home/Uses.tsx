@@ -15,14 +15,14 @@ function Uses() {
       
       <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
         {[
-          { src: "https://redpixelthemes.com/assets/images/icon-portfolio-green.svg", alt: "Portfolio", text: "portfolio" },
-          { src: "https://redpixelthemes.com/assets/images/icon-blog-green.svg", alt: "Blog", text: "blog" },
-          { src: "https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg", alt: "Ecommerce", text: "ecommerce" },
-          { src: "https://redpixelthemes.com/assets/images/icon-startup-green.svg", alt: "Startup", text: "startup" },
-          { src: "https://redpixelthemes.com/assets/images/icon-business-green.svg", alt: "Business", text: "business" },
-          { src: "https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg", alt: "Lifestyle", text: "lifestyle" },
-          { src: "https://redpixelthemes.com/assets/images/icon-landing-page-green.svg", alt: "Landing Pages", text: "landing pages" },
-          { src: "https://redpixelthemes.com/assets/images/icon-health-green.svg", alt: "Health", text: "health" }
+          { src: "https://redpixelthemes.com/assets/images/icon-portfolio-green.svg", alt: "Tesseract OCR", text: "Tesseract OCR" },
+          { src: "https://redpixelthemes.com/assets/images/icon-blog-green.svg", alt: "GoogleTrans", text: "GoogleTrans" },
+          { src: "https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg", alt: "FreecurrencyAPI", text: "FreecurrencyAPI" },
+          { src: "https://redpixelthemes.com/assets/images/icon-landing-page-green.svg", alt: "NLTK", text: "NLTK" },
+          { src: "https://redpixelthemes.com/assets/images/icon-startup-green.svg", alt: "Flask", text: "Flask" },
+          { src: "https://redpixelthemes.com/assets/images/icon-business-green.svg", alt: "FastAPI", text: "FastAPI" },
+          { src: "https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg", alt: "Django", text: "Django" },
+          { src: "https://redpixelthemes.com/assets/images/icon-health-green.svg", alt: "Next.js", text: "Next.js" }
         ].map((item, index) => (
           <a key={index} href="#" className="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
