@@ -54,7 +54,7 @@ const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
             </motion.div>
 
             <Link href={elem.link}>
-              <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md mt-4">
+              <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md">
                 Order Now
               </button>
             </Link>
