@@ -15,7 +15,7 @@ function Uses() {
       
       <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
         {[
-          { src: "https://redpixelthemes.com/assets/images/icon-portfolio-green.svg", alt: "Tesseract OCR", text: "Tesseract OCR" },
+          { src: "https://upload.wikimedia.org/wikipedia/commons/1/11/Toolbaricon_TesseractOCR.png", alt: "Tesseract OCR", text: "Tesseract OCR" },
           { src: "https://redpixelthemes.com/assets/images/icon-blog-green.svg", alt: "GoogleTrans", text: "GoogleTrans" },
           { src: "https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg", alt: "FreecurrencyAPI", text: "FreecurrencyAPI" },
           { src: "https://redpixelthemes.com/assets/images/icon-landing-page-green.svg", alt: "NLTK", text: "NLTK" },
@@ -24,7 +24,7 @@ function Uses() {
           { src: "https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg", alt: "Django", text: "Django" },
           { src: "https://redpixelthemes.com/assets/images/icon-health-green.svg", alt: "Next.js", text: "Next.js" }
         ].map((item, index) => (
-          <a key={index} href="#" className="block w-1/2 py-10 text-center border lg:w-1/4">
+          <div className="block w-1/2 py-10 text-center border lg:w-1/4">
             <div>
               <img
                 src={item.src}
@@ -35,7 +35,7 @@ function Uses() {
                 {item.text}
               </p>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
