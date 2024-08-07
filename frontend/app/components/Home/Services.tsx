@@ -55,7 +55,7 @@ const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
 
             <Link href={elem.link}>
               <button className="bg-[#ecae7e] text-white uppercase px-4 rounded-md">
-                Order Now
+                Try Now
               </button>
             </Link>
 
