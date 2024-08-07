@@ -30,6 +30,7 @@ function Uses() {
                 src={item.src}
                 className="block mx-auto w-32 h-32 object-contain" 
                 alt={item.alt}
+                loading="lazy"
               />
             </div>
           </div>

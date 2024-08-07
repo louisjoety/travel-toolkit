@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Lato } from '@next/font/google';
 import Plane from './plane.jpg';
