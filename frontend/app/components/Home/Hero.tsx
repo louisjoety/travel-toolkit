@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { Lato } from '@next/font/google';
 import Plane from './plane.jpg';
@@ -38,6 +36,7 @@ const Hero = () => {
           alt="Visual representation"
           width={1200}
           height={1200}
+          loading="lazy"
         />
       </div>
     </div>

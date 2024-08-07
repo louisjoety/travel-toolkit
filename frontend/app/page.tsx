@@ -6,6 +6,7 @@ import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Home/Hero';
+import Partners from './components/Home/Partners';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <Header menuOpen={menuOpen} handleNav={handleNav} />
       <Hero />
+      <Partners />
       <Footer />
     </>
   );
