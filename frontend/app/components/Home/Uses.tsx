@@ -8,7 +8,7 @@ const lato = Lato({
 
 function Uses() {
   return (
-    <div className={`container relative z-40 mx-auto mt-12 ${lato.className}`}>
+    <div className={`container relative z-10 mx-auto mt-12 ${lato.className}`}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Our Trusted Softwares</h2>
       </div>
