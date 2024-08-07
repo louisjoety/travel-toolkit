@@ -1,7 +1,6 @@
 import React from 'react';
 import { Lato } from '@next/font/google';
 
-// Import and configure Lato font
 const lato = Lato({
   subsets: ['latin'],
   weight: ['400', '700'],
@@ -10,12 +9,10 @@ const lato = Lato({
 function Uses() {
   return (
     <div className={`container relative z-40 mx-auto mt-12 ${lato.className}`}>
-      {/* Title Section */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Our Trusted Softwares</h2>
       </div>
       
-      {/* Software Cards */}
       <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
         {[
           { src: "https://redpixelthemes.com/assets/images/icon-portfolio-green.svg", alt: "Portfolio", text: "portfolio" },
