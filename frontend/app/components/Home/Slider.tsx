@@ -38,6 +38,7 @@ const Slider = () => {
     <div id="services" className={`${lato.className} pt-8 bg-gray-50`}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Featured Services</h2>
+        <h3 className="mt-2 text-gray-800">Explore our top services for seamless travel experiences and convenience.</h3>
       </div>
       <main className="mt-12 grid place-items-center md:grid-cols-2 grid-cols-1 w-full mx-auto max-w-5xl shadow-2xl rounded-2xl">
         <div
