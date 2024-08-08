@@ -1,4 +1,10 @@
 import React, { useState } from 'react';
+import { Lato } from '@next/font/google';
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 type FAQ = {
   question: string;
