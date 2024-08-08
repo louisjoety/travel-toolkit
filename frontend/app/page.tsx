@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Hero from './components/Home/Hero';
 import Partners from './components/Home/Partners';
 import Slider from './components/Home/Slider';
+import Questions from './components/Questions';
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +24,7 @@ export default function Home() {
       <Hero />
       <Partners />
       <Slider />
+      <Questions />
       <Footer />
     </>
   );
