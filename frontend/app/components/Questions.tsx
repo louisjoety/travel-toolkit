@@ -52,7 +52,7 @@ const Questions: React.FC = () => {
   return (
     <div className="py-24 px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
       <div className={`flex flex-col text-left basis-1/2 ${lato.className}`}>
-        <p className="inline-block font-semibold text-primary mb-4">
+        <p className="inline-block font-medium text-primary mb-4">
           Get answers to common questions about our app’s features and usage.
         </p>
         <p className={`sm:text-4xl text-3xl font-extrabold text-base-content ${lato.className}`}>
