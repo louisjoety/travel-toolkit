@@ -51,15 +51,22 @@ const Questions: React.FC = () => {
 
   return (
     <div className="py-24 px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
-      <div className="flex flex-col text-left basis-1/2">
-        <p className="inline-block font-semibold text-primary mb-4">Get answers to common questions about our app’s features and usage.</p>
-        <p className="sm:text-4xl text-3xl font-extrabold text-base-content">Frequently Asked Questions</p>
+      <div className={`flex flex-col text-left basis-1/2 ${lato.className}`}>
+        <p className="inline-block font-semibold text-primary mb-4">
+          Get answers to common questions about our app’s features and usage.
+        </p>
+        <p className={`sm:text-4xl text-3xl font-extrabold text-base-content ${lato.className}`}>
+          Frequently Asked
+        </p>
+        <p className={`sm:text-4xl text-3xl font-extrabold text-base-content ${lato.className}`}>
+          Questions
+        </p>
       </div>
       <ul className="basis-1/2">
         {faqs.map((faq, index) => (
           <li key={index}>
             <button
-              className="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10"
+              className={`relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10 ${lato.className}`}
               aria-expanded={expandedIndex === index}
               onClick={() => handleToggle(index)}
             >
