@@ -61,14 +61,14 @@ const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
 
             <div className="absolute md:bottom-1 bottom-10 right-10 md:right-0 w-full flex justify-center items-center">
               <div
-                className="absolute bottom-2 right-10 cursor-pointer bg-blue-500"
+                className="absolute bottom-2 right-10 cursor-pointer rounded-full  bg-blue-500"
                 onClick={clickPrev}
               >
                 <Image src={left} alt="Previous" />
               </div>
 
               <div
-                className="absolute bottom-2 right-2 cursor-pointer bg-blue-500"
+                className="absolute bottom-2 right-2 cursor-pointer rounded-full bg-blue-500"
                 onClick={clickNext}
               >
                 <Image src={right} alt="Next" />
