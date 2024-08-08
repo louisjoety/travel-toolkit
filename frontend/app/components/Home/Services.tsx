@@ -21,7 +21,7 @@ type Props = {
 const Services = ({ activeImage, clickNext, clickPrev }: Props) => {
   return (
     <div className={`font-lato`}>
-      <div className="grid place-items-start w-full bg-gray-50 relative md:rounded-tr-3xl md:rounded-br-3xl">
+      <div id="services" className="grid place-items-start w-full bg-gray-50 relative md:rounded-tr-3xl md:rounded-br-3xl">
         {images.map((elem, idx) => (
           <div
             key={idx}
