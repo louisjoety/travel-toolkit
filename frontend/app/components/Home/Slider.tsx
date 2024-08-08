@@ -35,7 +35,7 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <div className={`${lato.className} pt-8 bg-gray-50`}>
+    <div id="services" className={`${lato.className} pt-8 bg-gray-50`}>
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-gray-800">Featured Services</h2>
       </div>
