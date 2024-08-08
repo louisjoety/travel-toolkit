@@ -50,6 +50,7 @@ const Questions: React.FC = () => {
   };
 
   return (
+    <div className='bg-gray-50'>
     <div className="py-24 px-8 max-w-5xl mx-auto flex flex-col md:flex-row gap-12">
       <div className={`flex flex-col text-left basis-1/2 ${lato.className}`}>
         <p className="inline-block font-medium text-primary mb-4">
@@ -94,6 +95,7 @@ const Questions: React.FC = () => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
