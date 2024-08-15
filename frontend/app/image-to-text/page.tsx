@@ -15,7 +15,7 @@ const lato = Lato({
   weight: ['400', '700'],
 });
 
-export default function Translator() {
+export default function ImageToText() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [extractedText, setExtractedText] = useState<string>('');
