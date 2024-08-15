@@ -84,7 +84,7 @@ export default function Translator() {
         >
           {isLoading ? 'Processing...' : 'Submit'}
         </button>
-        <ExtractedText text={extractedText} /> {/* Use the new component */}
+        <ExtractedText text={extractedText} /> 
       </main>
       <Questions />
       <Footer />
