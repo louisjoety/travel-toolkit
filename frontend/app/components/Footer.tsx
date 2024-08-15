@@ -47,7 +47,7 @@ function Footer() {
         <div className="p-5">
           <ul>
             <p className="text-gray-800 font-bold text-2xl pb-4">Services</p>
-            <Link href="/translator">
+            <Link href="/image-to-text">
               <li className="text-gray-500 text-md pb-2 font-semibold hover:text-blue-600 cursor-pointer">
                 Image-to-Text
               </li>
