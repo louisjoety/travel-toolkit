@@ -26,7 +26,7 @@ const Header = ({ menuOpen, handleNav }) => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="flex">
-            <Link href="/translator">
+            <Link href="/image-to-text">
               <li className="ml-10 uppercase hover:border-b text-xl">Image-to-Text</li>
             </Link>
             <Link href="/translator">
