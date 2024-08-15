@@ -6,9 +6,9 @@ import Footer from "../components/Footer";
 import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Questions from "../components/Questions";
-import { useDropzone } from 'react-dropzone';
 import { Lato } from "next/font/google";
 import ExtractedText from "./ExtractedText";
+import Dropzone from "./Dropzone";
 
 const lato = Lato({
   subsets: ['latin'],
@@ -29,8 +29,6 @@ export default function Translator() {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     setFile(acceptedFiles[0]);
   }, []);
-
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const handleSubmit = async () => {
     if (!file) {
@@ -68,14 +66,7 @@ export default function Translator() {
       <Header menuOpen={menuOpen} handleNav={handleNav} />
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
         <h1 className="text-4xl font-bold mb-8">Image-to-text</h1>
-        <div {...getRootProps()} className="border-2 border-dashed border-gray-300 p-8 mb-4 cursor-pointer">
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <p>Drop the image here ...</p>
-          ) : (
-            <p>Drag 'n' drop an image here, or click to select an image</p>
-          )}
-        </div>
+        <Dropzone onDrop={onDrop} />
         {file && <p className="mb-4">Selected file: {file.name}</p>}
         <button 
           onClick={handleSubmit} 
@@ -84,7 +75,7 @@ export default function Translator() {
         >
           {isLoading ? 'Processing...' : 'Submit'}
         </button>
-        <ExtractedText text={extractedText} /> 
+        <ExtractedText text={extractedText} />
       </main>
       <Questions />
       <Footer />
