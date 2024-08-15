@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import cv2
 import pytesseract
 from PIL import Image
 import os
+import numpy as np
 
 app = Flask(__name__)
+CORS(app) 
 
 def setup_tesseract(tesseract_cmd_path):
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd_path
