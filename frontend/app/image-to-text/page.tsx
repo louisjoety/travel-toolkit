@@ -7,6 +7,12 @@ import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Questions from "../components/Questions";
 import { useDropzone } from 'react-dropzone';
+import { Lato } from "next/font/google";
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
 
 export default function Translator() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,7 +63,7 @@ export default function Translator() {
   };
 
   return (
-    <>
+    <div className={lato.className}>
       <Header menuOpen={menuOpen} handleNav={handleNav} />
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
         <h1 className="text-4xl font-bold mb-8">Image-to-text</h1>
@@ -86,6 +92,6 @@ export default function Translator() {
       </main>
       <Questions />
       <Footer />
-    </>
+    </div>
   );
 }
