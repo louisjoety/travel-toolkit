@@ -20,7 +20,7 @@ export default function ImageToText() {
   const [extractedText, setExtractedText] = useState<string>('');
   const [translatedText, setTranslatedText] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
-  const [textGenerated, setTextGenerated] = useState(false); // New state to track text generation
+  const [textGenerated, setTextGenerated] = useState(false);
   const router = useRouter();
 
   const handleNav = () => {
@@ -38,7 +38,7 @@ export default function ImageToText() {
     }
 
     setIsLoading(true);
-    setTextGenerated(false); // Reset text generated state before processing
+    setTextGenerated(false); 
     const formData = new FormData();
     formData.append('image', file);
 
@@ -73,14 +73,14 @@ export default function ImageToText() {
         },
         body: JSON.stringify({
           text: text,
-          target_language: 'en', // Adjust the target language if needed
+          target_language: 'en', 
         }),
       });
 
       if (response.ok) {
         const data = await response.json();
         setTranslatedText(data.translated_text);
-        setTextGenerated(true); // Set text generated state to true once translation is complete
+        setTextGenerated(true); 
       } else {
         console.error('Error translating text');
         alert('Error translating text. Please try again.');
