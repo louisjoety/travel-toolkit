@@ -8,6 +8,7 @@ import os
 
 app = Flask(__name__)
 CORS(app)  
+from googletrans import Translator
 
 def setup_tesseract(tesseract_cmd_path):
     pytesseract.pytesseract.tesseract_cmd = tesseract_cmd_path
@@ -32,14 +33,34 @@ def convert():
 
     image_file = request.files['image']
     tesseract_cmd_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+def translate_text(text, target_language='en'):
+    try:
+        translator = Translator()
+        translated = translator.translate(text, dest=target_language)
+        return translated.text
+    except Exception as e:
+        print(f"Translation Error: {e}")
+        return ""
+
+def main(image_path, tesseract_cmd_path):
     setup_tesseract(tesseract_cmd_path)
 
     text = convert_image_to_text(image_file)
 
     if text:
         return jsonify({'text': text})
+        print("Extracted Text:")
+        print(text)
+        
+        translated_text = translate_text(text)
+        print("\nTranslated Text:")
+        print(translated_text)
     else:
         return jsonify({'error': 'No text extracted'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)
+if __name__ == "__main__":
+    image_path = '' # TODO: Add file path to image
+    tesseract_cmd_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe' 
+    main(image_path, tesseract_cmd_path)
