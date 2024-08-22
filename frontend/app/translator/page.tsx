@@ -20,6 +20,7 @@ export default function ImageToText() {
   const [extractedText, setExtractedText] = useState<string>('');
   const [translatedText, setTranslatedText] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
+  const [textGenerated, setTextGenerated] = useState(false); // New state to track text generation
   const router = useRouter();
 
   const handleNav = () => {
@@ -37,6 +38,7 @@ export default function ImageToText() {
     }
 
     setIsLoading(true);
+    setTextGenerated(false); // Reset text generated state before processing
     const formData = new FormData();
     formData.append('image', file);
 
@@ -78,6 +80,7 @@ export default function ImageToText() {
       if (response.ok) {
         const data = await response.json();
         setTranslatedText(data.translated_text);
+        setTextGenerated(true); // Set text generated state to true once translation is complete
       } else {
         console.error('Error translating text');
         alert('Error translating text. Please try again.');
@@ -103,11 +106,13 @@ export default function ImageToText() {
           {isLoading ? 'Processing...' : 'Submit'}
         </button>
         <div className="mt-8 w-full max-w-4xl">
-          <div className="mb-8">
-            <h2 className="text-2xl font-bold mb-2">Extracted Text</h2>
-            <p className="p-4 border border-gray-300 rounded bg-gray-50">{extractedText}</p>
-          </div>
-          {translatedText && (
+          {extractedText && (
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold mb-2">Extracted Text</h2>
+              <p className="p-4 border border-gray-300 rounded bg-gray-50">{extractedText}</p>
+            </div>
+          )}
+          {textGenerated && translatedText && (
             <div>
               <h2 className="text-2xl font-bold mb-2">Translated Text</h2>
               <p className="p-4 border border-gray-300 rounded bg-gray-50">{translatedText}</p>
