@@ -7,7 +7,6 @@ import React, { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import Questions from "../components/Questions";
 import { Lato } from "next/font/google";
-import ExtractedText from "../image-to-text/ExtractedText";
 import Dropzone from "../image-to-text/Dropzone";
 
 const lato = Lato({
@@ -103,13 +102,18 @@ export default function ImageToText() {
         >
           {isLoading ? 'Processing...' : 'Submit'}
         </button>
-        <ExtractedText text={extractedText} />
-        {translatedText && (
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold">Translated Text</h2>
-            <p>{translatedText}</p>
+        <div className="mt-8 w-full max-w-4xl">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-2">Extracted Text</h2>
+            <p className="p-4 border border-gray-300 rounded bg-gray-50">{extractedText}</p>
           </div>
-        )}
+          {translatedText && (
+            <div>
+              <h2 className="text-2xl font-bold mb-2">Translated Text</h2>
+              <p className="p-4 border border-gray-300 rounded bg-gray-50">{translatedText}</p>
+            </div>
+          )}
+        </div>
       </main>
       <Questions />
       <Footer />
