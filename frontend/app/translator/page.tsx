@@ -19,6 +19,7 @@ export default function ImageToText() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [extractedText, setExtractedText] = useState<string>('');
+  const [translatedText, setTranslatedText] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -49,6 +50,7 @@ export default function ImageToText() {
       if (response.ok) {
         const data = await response.json();
         setExtractedText(data.text);
+        await handleTranslation(data.text);
       } else {
         console.error('Error converting image to text');
         alert('Error converting image to text. Please try again.');
@@ -58,6 +60,32 @@ export default function ImageToText() {
       alert('An error occurred. Please try again.');
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleTranslation = async (text: string) => {
+    try {
+      const response = await fetch('http://localhost:5000/api/translate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: text,
+          target_language: 'en', // Adjust the target language if needed
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setTranslatedText(data.translated_text);
+      } else {
+        console.error('Error translating text');
+        alert('Error translating text. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred while translating. Please try again.');
     }
   };
 
@@ -76,6 +104,12 @@ export default function ImageToText() {
           {isLoading ? 'Processing...' : 'Submit'}
         </button>
         <ExtractedText text={extractedText} />
+        {translatedText && (
+          <div className="mt-4">
+            <h2 className="text-2xl font-bold">Translated Text</h2>
+            <p>{translatedText}</p>
+          </div>
+        )}
       </main>
       <Questions />
       <Footer />
