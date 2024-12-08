@@ -4,13 +4,7 @@ import cv2
 import pytesseract
 from PIL import Image
 import numpy as np
-import os
 from nltk.tokenize import sent_tokenize
-from nltk.corpus import stopwords
-from nltk.probability import FreqDist
-from nltk.tokenize import word_tokenize
-import string
-import nltk
 from googletrans import Translator
 
 app = Flask(__name__)
