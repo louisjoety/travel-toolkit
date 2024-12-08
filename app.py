@@ -5,6 +5,12 @@ import pytesseract
 from PIL import Image
 import numpy as np
 import os
+from nltk.tokenize import sent_tokenize
+from nltk.corpus import stopwords
+from nltk.probability import FreqDist
+from nltk.tokenize import word_tokenize
+import string
+import nltk
 from googletrans import Translator
 
 app = Flask(__name__)
@@ -62,6 +68,41 @@ def translate():
 
     translated_text = translate_text(text, target_language)
     return jsonify({'translated_text': translated_text})
+
+def summarize_text(text, num_sentences=3):
+    try:
+        sentences = sent_tokenize(text)
+        
+        if len(sentences) <= num_sentences:
+            summary = ' '.join(sentences)
+        else:
+            summary = ' '.join(sentences[:num_sentences])
+
+        return summary
+    except Exception as e:
+        print(f"Error during summarization: {e}")
+        return ""
+
+@app.route('/api/convert_and_summarize', methods=['POST'])
+def convert_and_summarize():
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image file provided'}), 400
+
+    image_file = request.files['image']
+    tesseract_cmd_path = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    setup_tesseract(tesseract_cmd_path)
+
+    text = convert_image_to_text(image_file)
+
+    if not text:
+        return jsonify({'error': 'No text extracted from the image'}), 400
+
+    summary = summarize_text(text)
+
+    if summary:
+        return jsonify({'summary': summary})
+    else:
+        return jsonify({'error': 'Error during summarization'}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
