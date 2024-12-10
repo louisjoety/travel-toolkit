@@ -1,15 +1,12 @@
 'use client';
 
-import "../globals.css";
+import React, { useState } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState } from 'react';
 import Questions from "../components/Questions";
 
 export default function Converter() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [image, setImage] = useState(null);
-  const [convertedText, setConvertedText] = useState('');
   const [amount, setAmount] = useState('');
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
@@ -18,20 +15,34 @@ export default function Converter() {
   const handleNav = () => setMenuOpen(!menuOpen);
 
   const handleCurrencyConvert = async () => {
-    const response = await fetch('/api/currency_convert', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount, from_currency: fromCurrency, to_currency: toCurrency }),
-    });
-    const data = await response.json();
-    setConvertedAmount(data.converted_amount || data.error);
+    try {
+      const response = await fetch('http://localhost:5000/api/currency_convert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount: amount,
+          from_currency: fromCurrency,
+          to_currency: toCurrency
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (data.converted_amount) {
+        setConvertedAmount(data.converted_amount);
+      } else {
+        setConvertedAmount(data.error);
+      }
+    } catch (error) {
+      setConvertedAmount('Error occurred while fetching data');
+    }
   };
 
   return (
     <>
       <Header menuOpen={menuOpen} handleNav={handleNav} />
       <main className="flex flex-col items-center justify-center p-6">
-        <h1 className="text-4xl font-bold mb-8">Converter</h1>
+        <h1 className="text-4xl font-bold mb-8">Currency Converter</h1>
         <div>
           <h2 className="text-2xl m-4">Currency Converter</h2>
           <input
@@ -61,7 +72,9 @@ export default function Converter() {
           >
             Convert
           </button>
-          <p className="text-lg mt-4">{convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}</p>
+          <p className="text-lg mt-4">
+            {convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
+          </p>
         </div>
       </main>
       <Questions />
