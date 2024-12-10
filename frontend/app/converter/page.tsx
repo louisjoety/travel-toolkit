@@ -4,6 +4,49 @@ import React, { useState } from 'react';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Questions from "../components/Questions";
+import "../globals.css";
+import { Lato } from "next/font/google";
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+});
+
+const currencies = [
+  { code: 'EUR', name: 'Euro' },
+  { code: 'USD', name: 'US Dollar' },
+  { code: 'JPY', name: 'Japanese Yen' },
+  { code: 'BGN', name: 'Bulgarian Lev' },
+  { code: 'CZK', name: 'Czech Republic Koruna' },
+  { code: 'DKK', name: 'Danish Krone' },
+  { code: 'GBP', name: 'British Pound Sterling' },
+  { code: 'HUF', name: 'Hungarian Forint' },
+  { code: 'PLN', name: 'Polish Zloty' },
+  { code: 'RON', name: 'Romanian Leu' },
+  { code: 'SEK', name: 'Swedish Krona' },
+  { code: 'CHF', name: 'Swiss Franc' },
+  { code: 'ISK', name: 'Icelandic Króna' },
+  { code: 'NOK', name: 'Norwegian Krone' },
+  { code: 'HRK', name: 'Croatian Kuna' },
+  { code: 'RUB', name: 'Russian Ruble' },
+  { code: 'TRY', name: 'Turkish Lira' },
+  { code: 'AUD', name: 'Australian Dollar' },
+  { code: 'BRL', name: 'Brazilian Real' },
+  { code: 'CAD', name: 'Canadian Dollar' },
+  { code: 'CNY', name: 'Chinese Yuan' },
+  { code: 'HKD', name: 'Hong Kong Dollar' },
+  { code: 'IDR', name: 'Indonesian Rupiah' },
+  { code: 'ILS', name: 'Israeli New Sheqel' },
+  { code: 'INR', name: 'Indian Rupee' },
+  { code: 'KRW', name: 'South Korean Won' },
+  { code: 'MXN', name: 'Mexican Peso' },
+  { code: 'MYR', name: 'Malaysian Ringgit' },
+  { code: 'NZD', name: 'New Zealand Dollar' },
+  { code: 'PHP', name: 'Philippine Peso' },
+  { code: 'SGD', name: 'Singapore Dollar' },
+  { code: 'THB', name: 'Thai Baht' },
+  { code: 'ZAR', name: 'South African Rand' }
+];
 
 export default function Converter() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -45,10 +88,11 @@ export default function Converter() {
   return (
     <>
       <Header menuOpen={menuOpen} handleNav={handleNav} />
-      <main className="flex flex-col items-center justify-center p-6">
+      <main className={`${lato.className} flex flex-col items-center justify-center p-6`}>
         <h1 className="text-4xl font-bold mb-8">Currency Converter</h1>
         <div>
           <h2 className="text-2xl m-4">Currency Converter</h2>
+          
           <input
             type="number"
             value={amount}
@@ -56,20 +100,33 @@ export default function Converter() {
             placeholder="Amount"
             className="border p-2 mb-4"
           />
-          <input
-            type="text"
+          
+          {/* From Currency Dropdown */}
+          <select
             value={fromCurrency}
-            onChange={(e) => setFromCurrency(e.target.value.toUpperCase())}
-            placeholder="From (e.g., USD)"
+            onChange={(e) => setFromCurrency(e.target.value)}
             className="border p-2 mb-4"
-          />
-          <input
-            type="text"
+          >
+            {currencies.map((currency) => (
+              <option key={currency.code} value={currency.code}>
+                {currency.name} ({currency.code})
+              </option>
+            ))}
+          </select>
+
+          {/* To Currency Dropdown */}
+          <select
             value={toCurrency}
-            onChange={(e) => setToCurrency(e.target.value.toUpperCase())}
-            placeholder="To (e.g., EUR)"
+            onChange={(e) => setToCurrency(e.target.value)}
             className="border p-2 mb-4"
-          />
+          >
+            {currencies.map((currency) => (
+              <option key={currency.code} value={currency.code}>
+                {currency.name} ({currency.code})
+              </option>
+            ))}
+          </select>
+
           <button
             onClick={handleCurrencyConvert}
             className="bg-blue-500 text-white px-4 py-2"
