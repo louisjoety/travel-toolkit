@@ -95,7 +95,7 @@ export default function ImageToText() {
     <div className={lato.className}>
       <Header menuOpen={menuOpen} handleNav={handleNav} />
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
-        <h1 className="text-4xl font-bold mb-8">Translate Now</h1>
+        <h1 className="text-4xl font-bold mb-8">Translate</h1>
         <Dropzone onDrop={onDrop} />
         {file && <p className="mb-4">Selected file: {file.name}</p>}
         <button 
