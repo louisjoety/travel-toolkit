@@ -107,9 +107,6 @@ def convert_and_summarize():
         return jsonify({'error': 'Error during summarization'}), 500
 
 def get_exchange_rates():
-    """
-    Fetch the latest currency exchange rates from the API.
-    """
     headers = {'apikey': API_KEY}
     try:
         response = requests.get(BASE_URL, headers=headers)
@@ -124,9 +121,6 @@ def get_exchange_rates():
         return None
 
 def convert_currency(amount, from_currency, to_currency, rates):
-    """
-    Convert a given amount from one currency to another using the provided exchange rates.
-    """
     if from_currency not in rates or to_currency not in rates:
         raise ValueError("Invalid currency code provided.")
 
@@ -141,9 +135,6 @@ def convert_currency(amount, from_currency, to_currency, rates):
 
 @app.route('/api/currency_convert', methods=['POST'])
 def currency_convert():
-    """
-    API endpoint to perform currency conversion.
-    """
     data = request.json
     try:
         amount = float(data.get('amount', 0))
