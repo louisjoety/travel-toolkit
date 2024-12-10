@@ -11,10 +11,12 @@ export default function Converter() {
   const [fromCurrency, setFromCurrency] = useState('USD');
   const [toCurrency, setToCurrency] = useState('EUR');
   const [convertedAmount, setConvertedAmount] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleNav = () => setMenuOpen(!menuOpen);
 
   const handleCurrencyConvert = async () => {
+    setLoading(true); 
     try {
       const response = await fetch('http://localhost:5000/api/currency_convert', {
         method: 'POST',
@@ -35,6 +37,8 @@ export default function Converter() {
       }
     } catch (error) {
       setConvertedAmount('Error occurred while fetching data');
+    } finally {
+      setLoading(false); // Set loading to false after the conversion process is done
     }
   };
 
@@ -72,9 +76,18 @@ export default function Converter() {
           >
             Convert
           </button>
-          <p className="text-lg mt-4">
-            {convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
-          </p>
+          
+          {/* Show loading spinner while converting */}
+          {loading ? (
+            <div className="mt-4">
+              <div className="animate-spin rounded-full border-t-4 border-blue-500 w-12 h-12 mx-auto"></div>
+              <p className="text-lg mt-4">Converting...</p>
+            </div>
+          ) : (
+            <p className="text-lg mt-4">
+              {convertedAmount && `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`}
+            </p>
+          )}
         </div>
       </main>
       <Questions />
