@@ -1,16 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
+from routes import routes  
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
-@app.post('/get-quote')
-def get_quote():
-    data = request.get_json()
-    if data['number'] == 1:
-        return jsonify({"quote": "success"})
-    return jsonify({"quote": "unknown request"})
+app.register_blueprint(routes)
 
 if __name__ == '__main__':
     app.run(debug=True)
-
